@@ -159,7 +159,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     name: Release version to npm registry
-    needs: build
+    needs: [lint, build]
     if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v2
