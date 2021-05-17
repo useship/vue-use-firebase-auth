@@ -13,11 +13,18 @@ export type FirebaseAuthState = {
   signingIn: boolean;
   uid: string | null;
   user: firebase.User | null;
-  credential: firebase.auth.AuthCredential | null;
 };
 
 type AuthFunctions = {
-  signInWithTwitter: () => Promise<void>;
+  signUpWithEmailAndPassword: (
+    email: string,
+    password: string
+  ) => Promise<void>;
+  signInWithEmailAndPassword: (
+    email: string,
+    password: string
+  ) => Promise<void>;
+  signOut: () => Promise<void>;
 };
 
 export type UseFirebaseAuth = AuthFunctions & ToRefs<FirebaseAuthState>;

@@ -21,7 +21,6 @@ export function provideFirebaseAuth(app: App) {
     signingIn: false,
     uid: null,
     user: null,
-    credential: null,
   });
 
   firebaseAuth.onAuthStateChanged((user) => {
